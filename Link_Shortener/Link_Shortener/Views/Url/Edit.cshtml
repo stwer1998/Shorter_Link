@@ -1,0 +1,44 @@
+﻿
+@{
+    ViewData["Title"] = "Edit";
+}
+@model DtoUrl
+<h1>Edit</h1>
+
+<form asp-antiforgery="true" asp-controller="Url" asp-action="Edit" method="post">
+    <div>
+        <input type="hidden" name="Id" value="@Model.Id" />
+    </div>
+    <div>
+        <label>Short Url</label><br />
+        <input type="text" name="ShortLink" value="@Model.ShortLink" />
+        <span asp-validation-for="ShortLink"></span>
+    </div>
+    <div>
+        <label>Long Url</label><br />
+        <input type="text" name="LongLink" value="@Model.LongLink" />
+        <span asp-validation-for="LongLink"></span>
+    </div>
+    <div>
+        <input type="submit" value="Save" />
+    </div>
+</form>
+@section scripts{
+
+
+
+    <environment names="Development">
+        <script src="~/lib/jquery-validation/dist/jquery.validate.js"></script>
+        <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js"></script>
+    </environment>
+    <environment names="Staging,Production">
+        <script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.14.0/jquery.validate.min.js"
+                asp-fallback-src="~/lib/jquery-validation/dist/jquery.validate.min.js"
+                asp-fallback-test="window.jQuery && window.jQuery.validator">
+        </script>
+        <script src="https://ajax.aspnetcdn.com/ajax/jquery.validation.unobtrusive/3.2.6/jquery.validate.unobtrusive.min.js"
+                asp-fallback-src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"
+                asp-fallback-test="window.jQuery && window.jQuery.validator && window.jQuery.validator.unobtrusive">
+        </script>
+    </environment>
+}

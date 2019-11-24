@@ -1,0 +1,43 @@
+﻿
+@{
+    ViewData["Title"] = "GetAllUrls";
+    ViewData["Css"] = "table { border-collapse: collapse; border: 1px solid grey;";
+}
+
+@model List<Url>
+<h1>GetAllUrls</h1>
+
+<table>    
+    <tr>
+        <th></th><th></th>
+        <th>Short link</th>
+        <th>Create date</th>
+        <th>Count transaction</th>
+        <th>Long link</th>
+    </tr>
+    @foreach (var item in @Model)
+    {
+<tr>
+    @{var parametrs = new Dictionary<string, string> { { "Id", @item.Id.ToString() } };}
+    <td><a asp-controller="Url" asp-action="Edit" asp-all-route-data="parametrs">Edit</a></td>
+    <td><a asp-controller="Url" asp-action="DeleteUrl" asp-all-route-data="parametrs">Delete</a></td>
+    <td>@item.ShortLink</td>
+    <td>@item.CreateDate</td>
+    <td>@item.CountTransition</td>
+    <td>@item.LongLink</td>
+</tr>
+    }
+</table>
+
+<style>
+ table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+th, td {
+  padding: 10px;
+}
+th {
+  text-align: left;
+}
+</style>

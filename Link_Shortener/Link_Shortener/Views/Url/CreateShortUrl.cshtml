@@ -1,0 +1,12 @@
+﻿
+@{
+    ViewData["Title"] = "CreateShortUrl";
+}
+
+<h1>CreateShortUrl</h1>
+
+<form asp-controller="Url" asp-action="CreateShortUrl" method="post">
+    <input type="text" name="url"/>
+    <div><input type="submit" value="Shorter"/></div>
+</form>
+
