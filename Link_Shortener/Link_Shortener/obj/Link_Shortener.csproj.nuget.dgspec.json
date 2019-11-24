@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\stwer1998\\source\\repos\\Link_Shortener\\Link_Shortener\\Link_Shortener.csproj": {}
+    "e:\\C#\\Shorter_Link\\Link_Shortener\\Link_Shortener\\Link_Shortener.csproj": {}
   },
   "projects": {
-    "C:\\Users\\stwer1998\\source\\repos\\Link_Shortener\\Link_Shortener\\Link_Shortener.csproj": {
+    "e:\\C#\\Shorter_Link\\Link_Shortener\\Link_Shortener\\Link_Shortener.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\stwer1998\\source\\repos\\Link_Shortener\\Link_Shortener\\Link_Shortener.csproj",
+        "projectUniqueName": "e:\\C#\\Shorter_Link\\Link_Shortener\\Link_Shortener\\Link_Shortener.csproj",
         "projectName": "Link_Shortener",
-        "projectPath": "C:\\Users\\stwer1998\\source\\repos\\Link_Shortener\\Link_Shortener\\Link_Shortener.csproj",
+        "projectPath": "e:\\C#\\Shorter_Link\\Link_Shortener\\Link_Shortener\\Link_Shortener.csproj",
         "packagesPath": "C:\\Users\\stwer1998\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\stwer1998\\source\\repos\\Link_Shortener\\Link_Shortener\\obj\\",
+        "outputPath": "e:\\C#\\Shorter_Link\\Link_Shortener\\Link_Shortener\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -56,6 +56,10 @@
               "version": "[3.0.0, )"
             },
             "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
+              "target": "Package",
+              "version": "[3.0.0, )"
+            },
+            "Pomelo.EntityFrameworkCore.MySql": {
               "target": "Package",
               "version": "[3.0.0, )"
             }

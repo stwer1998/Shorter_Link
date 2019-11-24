@@ -24,9 +24,8 @@ namespace Link_Shortener.Controllers
         [HttpPost]
         public IActionResult CreateShortUrl(string url) 
         {
-            var a = new Url(url, Shorter());
-            var res=db.AddUrl(a);
-            
+            var newUrl = new Url(url, Shorter());
+            var res=db.AddUrl(newUrl);            
             return View("ShortUrl",Request.Scheme+"://"+Request.Host+ "/" + res);
         }
 
@@ -47,7 +46,7 @@ namespace Link_Shortener.Controllers
         {
             var origin = db.GetUrl(dtoUrl.Id);
             if (origin.ShortLink == dtoUrl.ShortLink || db.CheckShortUrl(dtoUrl.ShortLink))
-            {
+            {//здесь идет проверка корректности короткого ссылка
                 origin.ShortLink = dtoUrl.ShortLink;
                 origin.LongLink = dtoUrl.LongLink;
                 db.EditUrl(origin);
@@ -76,7 +75,7 @@ namespace Link_Shortener.Controllers
         }
 
         private string Shorter() 
-        {
+        {//создает короткую ссылку пока не найдет не использованного
             string result=GetUniqueKey(3);
             while (!db.CheckShortUrl(result)) 
             {
@@ -86,7 +85,7 @@ namespace Link_Shortener.Controllers
         }
 
         private string GetUniqueKey(int size)
-        {
+        {//генератор случайных строк
             char[] chars =
                 "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890".ToCharArray();
             byte[] data = new byte[size];

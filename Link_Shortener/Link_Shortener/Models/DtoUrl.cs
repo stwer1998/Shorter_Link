@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
-namespace Link_Shortener.Models
+﻿namespace Link_Shortener.Models
 {
-    public class DtoUrl
+    public class DtoUrl//этот клас нужен при редактирование основного объекта
     {
         public int Id { get; set; }
 
